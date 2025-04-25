@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fertilizer Result | AgroHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f4fdf4, #e8f5e9);
+      color: #333;
+      padding-top: 80px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      background: white;
+      text-align: center;
+    }
+
+    h2 {
+      color: #198754;
+      font-weight: 600;
+    }
+
+    .fertilizer-name {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #28a745;
+      margin-top: 20px;
+    }
+
+    .btn-success {
+      background-color: #198754;
+      border: none;
+    }
+
+    .btn-success:hover {
+      background-color: #157347;
+    }
+
+    footer {
+      background-color: #1b5e20;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-success" href="/">AgroHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-success" href="/">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-success" href="#" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/crop_recommendation">Crop Recommendation</a></li>
+              <li><a class="dropdown-item" href="/yield_prediction">Crop Yield Prediction</a></li>
+              <li><a class="dropdown-item" href="/fertilizer_recommendation">Fertilizer Suggestion</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-center bg-success text-white rounded" href="/choice">Explore More</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link text-success" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-success" href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Result Section -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card mt-4">
+          <h2>Recommended Fertilizer</h2>
+          <div class="fertilizer-name">{{ fertilizer }}</div>
+          <a href="/fertilizer_recommendation" class="btn btn-success mt-4">Try Again</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AgroHub. All Rights Reserved. | Designed with ❤️ to empower farmers and agricultural innovation.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

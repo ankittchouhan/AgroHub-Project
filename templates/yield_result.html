@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prediction Result | AgroHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f2fff5;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #198754 !important;
+      font-size: 24px;
+    }
+
+    .nav-link {
+      color: #198754 !important;
+      font-weight: 500;
+      margin-right: 15px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      border-radius: 5px;
+      padding: 6px 10px;
+    }
+
+    .nav-link:hover {
+      background-color: #198754;
+      color: white !important;
+    }
+
+    .dropdown-menu {
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-item {
+      font-weight: 500;
+      color: #198754;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-item:hover {
+      background-color: #d4f5dc;
+      color: #157347;
+    }
+
+    .dropdown-divider {
+      margin: 10px 0;
+    }
+
+    .explore-btn {
+      display: block;
+      text-align: center;
+      background-color: #198754;
+      color: white;
+      padding: 8px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    .explore-btn:hover {
+      background-color: #157347;
+    }
+
+    .result-container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 40px 30px;
+      max-width: 600px;
+      margin: 100px auto 50px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .result-container h2 {
+      color: #198754;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .result-container p {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .back-btn {
+      background-color: #198754;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #157347;
+    }
+
+    footer {
+      background-color: #198754;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">AgroHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" href="/crop_recommendation">Crop Recommendation</a></li>
+              <li><a class="dropdown-item" href="/yield_prediction">Crop Yield Prediction</a></li>
+              <li><a class="dropdown-item" href="/fertilizer_recommendation">Fertilizer Suggestion</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="explore-btn" href="/choice">Explore More</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Result Section -->
+  <div class="result-container">
+    <h2>Predicted Crop Yield</h2>
+    <p>The predicted crop yield is: <strong>{{ prediction }}</strong></p>
+    <a href="/" class="back-btn">Go Back</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 AgroHub. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

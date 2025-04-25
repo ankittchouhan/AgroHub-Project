@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f4f9f4, #e8f5e9);
+      color: #333;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #198754 !important;
+      font-size: 24px;
+    }
+
+    .nav-link {
+      color: #198754 !important;
+      font-weight: 500;
+      margin-right: 15px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      border-radius: 5px;
+      padding: 6px 10px;
+    }
+
+    .nav-link:hover {
+      background-color: #198754;
+      color: white !important;
+    }
+
+    .dropdown-menu {
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-item {
+      font-weight: 500;
+      color: #198754;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-item:hover {
+      background-color: #d4f5dc;
+      color: #157347;
+    }
+
+    .explore-btn {
+      display: block;
+      text-align: center;
+      background-color: #198754;
+      color: white;
+      padding: 8px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    .explore-btn:hover {
+      background-color: #157347;
+    }
+
+    .hero {
+      background: url('/static/images/agriculture1.jpg') center/cover no-repeat;
+      text-align: center;
+      padding: 100px 20px 80px;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .card-container {
+      padding: 60px 20px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      padding: 40px 25px;
+      background: white;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #28a745;
+      font-size: 1.5rem;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    .launch-btn {
+      background-color: #28a745;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .launch-btn:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      background-color: #1b5e20;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">AgroHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" href="/crop_recommendation">Crop Recommendation</a></li>
+              <li><a class="dropdown-item" href="/yield_prediction">Crop Yield Prediction</a></li>
+              <li><a class="dropdown-item" href="/fertilizer_recommendation">Fertilizer Suggestion</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="explore-btn" href="/choice">Explore More</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1><br>AgroHub</h1>
+      <p class="lead">Empowering Agriculture with Intelligent Solutions</p>
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="container card-container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Explore Our Modules</h2>
+      <p class="text-muted">Delivering smart tools to help farmers make data-driven decisions</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Crop Recommendation</h5>
+            <p class="card-text">Suggests the most suitable crops to grow based on soil, weather, and location-specific conditions.</p>
+            <a href="/crop_recommendation" class="btn launch-btn">Launch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Crop Yield Prediction</h5>
+            <p class="card-text">Predicts potential crop yield using historical data, climate parameters, and machine learning algorithms.</p>
+            <a href="/yield_prediction" class="btn launch-btn">Launch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Fertilizer Recommendation</h5>
+            <p class="card-text">Provides optimal fertilizer suggestions tailored to the soil’s current nutrient levels and crop needs.</p>
+            <a href="/fertilizer_recommendation" class="btn launch-btn">Launch Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AgroHub. All Rights Reserved. | Designed with ❤️ to empower farmers and agricultural innovation.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
